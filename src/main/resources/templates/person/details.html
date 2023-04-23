@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div th:object="${user}">
+    <p> id: <span th:text="*{id}"></span></p>
+    <p> Nazwa użytkownika: <span th:text="*{username}"></span></p>
+    <p> email: <span th:text="*{email}"></span></p>
+    <p> aktywny: <span th:text="*{enabled}"></span></p>
+    <p> Ostatnie logowanie: <span th:text="*{lastLoginDate}"></span></p>
+</div>
+
+</body>
+</html>

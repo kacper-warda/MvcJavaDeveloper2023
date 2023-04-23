@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+            crossorigin="anonymous"></script>
+</head>
+<body>
+
+<div class="container">
+    <h1>Users list</h1>
+
+    <table class="table table-striped table-bordered">
+        <tr>
+            <th>id</th>
+            <th>username</th>
+            <th>email</th>
+            <th>enabled</th>
+            <th>last login</th>
+        </tr>
+        <tr th:each="user : ${users}">
+            <!--/*@thymesVar id="user" type="com.example.mvcjavadeveloper2023.person.Person"*/-->
+            <td th:text="${user.id}">1</td>
+            <td th:text="${user.username}">kacper</td>
+            <td th:text="${user.email}">testowy@emial.com</td>
+            <td th:text="${user.enabled}">true</td>
+            <td th:text="${#calendars.format(user.lastLoginDate,'yyyy.MM.dd hh:mm')}">wczoraj</td>
+
+        </tr>
+    </table>
+</div>
+
+
+</body>
+</html>
